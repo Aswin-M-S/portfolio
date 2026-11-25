@@ -20,3 +20,7 @@ Open `index.html` in a browser, or serve the folder (e.g. `python -m http.server
 ## Theming
 
 Dark mode follows the system by default. The toggle sets `data-theme="light|dark"` on `<html>` and saves it in localStorage; an inline script in `<head>` applies it before paint to avoid a flash. Dark-mode variables are defined twice in `styles.css` (the media query and `[data-theme="dark"]`), so change both.
+
+## Search and sharing
+
+`index.html` carries Open Graph/Twitter tags (preview image `og-image.png`, 1200x630) and Person JSON-LD; `sitemap.xml` and `robots.txt` use the absolute URL `https://aswin-m-s.github.io/portfolio/`, so update them if the domain changes. Favicons: `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`.

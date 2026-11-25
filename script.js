@@ -57,13 +57,12 @@ const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
 if ('IntersectionObserver' in window) {
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.isIntersecting && byId.has(e.target.id)) {
-        links.forEach((a) => a.classList.remove('active'));
-        byId.get(e.target.id).classList.add('active');
-      }
+      if (!e.isIntersecting) return;
+      links.forEach((a) => a.classList.remove('active'));
+      if (byId.has(e.target.id)) byId.get(e.target.id).classList.add('active');
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  byId.forEach((_, id) => { const el = document.getElementById(id); if (el) spy.observe(el); });
+  document.querySelectorAll('main section[id]').forEach((el) => spy.observe(el));
 }
 
 // Count-up stats

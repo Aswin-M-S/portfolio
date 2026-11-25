@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aswin-m-s.github.io/portfolio/sitemap.xml
