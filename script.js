@@ -154,9 +154,10 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
 // Accessibility options (saved in localStorage as "a11y")
 (function () {
   const root = document.documentElement;
-  const btn = document.getElementById('a11yBtn');
+  const btns = [document.getElementById('a11yBtnTop')].filter(Boolean);
   const panel = document.getElementById('a11yPanel');
-  if (!btn || !panel) return;
+  if (!btns.length || !panel) return;
+  let last = btns[0];
   const KEYS = ['contrast', 'motion', 'font', 'links', 'spacing'];
   let st = { ts: 0 };
   try { st = Object.assign({ ts: 0 }, JSON.parse(localStorage.getItem('a11y') || '{}')); } catch (e) {}
@@ -170,12 +171,12 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
   };
   const open = (on) => {
     panel.hidden = !on;
-    btn.setAttribute('aria-expanded', String(on));
+        btns.forEach((b) => b.setAttribute('aria-expanded', String(on)));
     if (on) { const f = panel.querySelector('button, input'); if (f) f.focus(); }
   };
-  btn.addEventListener('click', () => open(panel.hidden));
-  document.getElementById('a11yClose').addEventListener('click', () => { open(false); btn.focus(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
+  btns.forEach((b) => b.addEventListener('click', () => { last = b; open(panel.hidden); }));
+  document.getElementById('a11yClose').addEventListener('click', () => { open(false); last.focus(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); last.focus(); } });
   panel.querySelectorAll('input[data-opt]').forEach((i) => i.addEventListener('change', () => { st[i.dataset.opt] = i.checked; save(); render(); }));
   panel.querySelectorAll('.a11y-seg button').forEach((b) => b.addEventListener('click', () => { st.ts = +b.dataset.ts; save(); render(); }));
   document.getElementById('a11yReset').addEventListener('click', () => { st = { ts: 0 }; save(); render(); });

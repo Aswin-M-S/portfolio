@@ -35,4 +35,4 @@ GoatCounter (cookie-free) counts visits via the script tag at the end of `index.
 
 ## Accessibility options
 
-A floating button (bottom-left, `#a11yBtn`) opens a panel (`#a11yPanel`) with text size, high contrast, reduce motion, readable font (Atkinson Hyperlegible), more text spacing and underline links. State is saved in localStorage (`a11y`) and applied as classes/`data-ts` on `<html>`; an inline script in `<head>` applies it before paint. Reduce motion defaults on when the OS asks for it. New components should use the CSS variables so high contrast keeps working. Text size uses CSS `zoom` on `body`.
+An icon button in the header (`#a11yBtnTop`) opens a panel (`#a11yPanel`) under the header with text size, high contrast, reduce motion, readable font (Atkinson Hyperlegible), more text spacing and underline links. State is saved in localStorage (`a11y`) and applied as classes/`data-ts` on `<html>`; an inline script in `<head>` applies it before paint. Reduce motion defaults on when the OS asks for it. New components should use the CSS variables so high contrast keeps working. Text size uses CSS `zoom` on `body`.
