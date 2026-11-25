@@ -44,3 +44,7 @@ Audited with axe-core in dark, light and high-contrast modes: 0 violations. Colo
 ## 404 page and print
 
 `404.html` is the custom GitHub Pages error page; it uses absolute `/portfolio/...` paths because it can be served from any URL depth, so change those if the site moves to a custom domain at the root. A `@media print` block at the end of `styles.css` gives a compact black-on-white printout (no nav/panels, URLs shown after external links, final stat values via a `beforeprint` handler in `script.js`).
+
+## Nerd features
+
+`nerd.js` (loaded after `script.js`) adds: terminal mode (`html.theme-terminal`, header button `#termBtn`, saved in localStorage as `terminal`; styles live at the end of `styles.css`), a Ctrl/Cmd+K command palette, a hidden fake terminal opened with the backtick key (commands are in the `COMMANDS` object), and the Konami code toggle. The palette and terminal are built by JS, so there is no HTML for them. The terminal prints only the site's own public text (anonymized project descriptions, links read from the page), so keep client names out of `nerd.js`. Terminal-mode colours are gated with `:not(.a11y-contrast)` so high contrast still wins. The audit (axe) was clean in dark, light, high-contrast and terminal modes.
