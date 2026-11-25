@@ -83,7 +83,7 @@ if ('IntersectionObserver' in window && !reduce) {
       co.unobserve(el);
     });
   }, { threshold: 0.6 });
-  counters.forEach((el) => co.observe(el));
+  counters.forEach((el) => { fmt(el, 0); co.observe(el); });
 } else {
   counters.forEach((el) => fmt(el, +el.dataset.count));
 }
@@ -181,4 +181,14 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
   panel.querySelectorAll('.a11y-seg button').forEach((b) => b.addEventListener('click', () => { st.ts = +b.dataset.ts; save(); render(); }));
   document.getElementById('a11yReset').addEventListener('click', () => { st = { ts: 0 }; save(); render(); });
   render();
+})();
+
+// Printing: always show the final stat values
+(function () {
+  const finals = () => document.querySelectorAll('[data-count]').forEach((el) => {
+    el.textContent = Math.round(+el.dataset.count).toLocaleString('en-US') + (el.dataset.suffix || '');
+  });
+  window.addEventListener('beforeprint', finals);
+  const mq = window.matchMedia('print');
+  if (mq.addEventListener) mq.addEventListener('change', (e) => { if (e.matches) finals(); });
 })();
