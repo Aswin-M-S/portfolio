@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aswin — Power Platform Consultant</title>
+  <meta name="description" content="Aswin, Senior Technical Consultant (Microsoft Power Platform) in Bengaluru. End-to-end delivery of canvas apps, Power Automate, Dataverse and SharePoint solutions.">
+  <meta name="theme-color" content="#000000">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">Aswin</a>
+      <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle day / night mode" title="Toggle day / night mode">
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#ai">AI</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow reveal">Senior Technical Consultant · Microsoft Power Platform</p>
+      <h1 class="reveal">I take Power Platform<br><span class="gradient">from scoping to live.</span></h1>
+      <p class="lead reveal">I sit with the client, scope the work, build it, take it live and support it afterwards. Canvas apps, Power Automate, Dataverse and SharePoint, with Graph API and custom connectors for integration.</p>
+      <p class="meta reveal">Sysfore Technologies · Bengaluru · 4+ years</p>
+      <div class="cta reveal">
+        <a href="#work" class="btn primary">View case studies</a>
+        <a href="#contact" class="btn link">Get in touch &rsaquo;</a>
+      </div>
+      <ul class="hero-stats reveal">
+        <li><b data-count="70" data-suffix="K+">0</b><span>users on one platform</span></li>
+        <li><b data-count="2000" data-suffix="">0</b><span>requests automated a day</span></li>
+        <li><b data-count="10" data-suffix="+">0</b><span>client apps supported</span></li>
+        <li><b data-count="20" data-suffix="+">0</b><span>developers onboarded</span></li>
+      </ul>
+    </section>
+
+    <section class="section alt" id="work">
+      <div class="container">
+        <p class="kicker reveal">01 · Work</p>
+        <h2 class="reveal">Selected work.</h2>
+        <p class="sub reveal">Four flagship builds, from problem to outcome.</p>
+        <div class="stack-cases">
+          <article class="card case full reveal">
+            <div class="visual t1"><ol class="flow"><li><b>Canvas app</b><span>21 screens · 17 components</span></li><li><b>Power Automate</b><span>69 flows</span></li><li><b>SharePoint REST</b><span>ID-range reads</span></li><li><b>SharePoint</b><span>~59 lists &amp; libraries</span></li></ol><small>Reads are routed through flows to get past delegation limits at this scale.</small></div>
+            <div class="case-body">
+              <div>
+                <p class="tag">Architect &amp; delivery lead · team of 3–5</p>
+                <h3>Quality &amp; document platform</h3>
+                <p class="what">Global engineering services company</p>
+                <p>A company-wide quality and process portal, agreed for 25,000 users and now close to 70,000 including external users.</p>
+                <ul class="bullets"><li>Ran the workshops with Quality and Audit and wrote the BRD.</li><li>Reads go through flows to get past delegation limits; lists over 5,000 items are read in ID ranges through the SharePoint REST API.</li><li>Built 21 screens, 17 shared components, 69 flows, 2 PCF controls and about 59 lists and libraries across Dev, UAT and Prod.</li><li>Migrated 10,000+ legacy documents with their metadata from the old SQL Server database. Added release, versioning, archiving and Microsoft Search, so finding a document went from minutes to seconds.</li></ul>
+              </div>
+              <div>
+                <ul class="metrics"><li><b>~70,000</b><span>users, up to 25,000 active at once</span></li><li><b>&lt; 7s</b><span>to load 70,000+ records</span></li><li><b>5,000+</b><span>controlled quality documents</span></li></ul>
+                <ul class="chips"><li>Power Apps Canvas</li><li>SharePoint</li><li>Power Automate</li><li>Dataverse</li><li>SQL Server</li><li>PCF</li><li>Microsoft Search</li><li>Entra ID</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="card case full reveal">
+            <div class="visual t2"><ol class="flow"><li><b>New-joiner request</b><span>model-driven app</span></li><li><b>Dataverse</b><span>request + status</span></li><li><b>Flows + Graph API</b><span>accounts · licences · groups</span></li><li><b>Retry / escalate</b><span>correlation IDs</span></li><li><b>SLA dashboards</b><span>throughput · errors</span></li></ol><small>Every step is traced with a correlation ID, so a failure is never silent.</small></div>
+            <div class="case-body">
+              <div>
+                <p class="tag">Architect &amp; lead developer · team of 3–5</p>
+                <h3>Identity automation</h3>
+                <p class="what">Global IT services company</p>
+                <p>Automated identity setup for new joiners worldwide: accounts, licences, groups and Microsoft 365 resources.</p>
+                <ul class="bullets"><li>Retries, correlation IDs and escalation rules mean failed steps either recover or reach the right team.</li><li>No support tickets raised since go-live.</li><li>HR, IT and Operations get SLA dashboards showing throughput and errors.</li></ul>
+              </div>
+              <div>
+                <ul class="metrics"><li><b>~2,000</b><span>requests a day</span></li><li><b>7+ → &lt;3</b><span>days to provision</span></li></ul>
+                <ul class="chips"><li>Power Apps Model-Driven</li><li>Power Automate</li><li>Dataverse</li><li>Microsoft Graph API</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="card case full reveal">
+            <div class="visual t3"><ol class="flow"><li><b>Submit</b><span>budget blocked</span></li><li><b>Region Head</b><span>approve in Outlook</span></li><li><b>President</b><span>phone notification</span></li><li><b>CBO</b><span>final approval</span></li><li><b>After the trip</b><span>budget settled</span></li></ol><small>Empty levels are skipped; an approver's own request moves up one level.</small></div>
+            <div class="case-body">
+              <div>
+                <p class="tag">Developer · team of 3 · Sep–Nov 2026</p>
+                <h3>International travel approvals</h3>
+                <p class="what">Automaker, international business division</p>
+                <p>Replaced a tablet-only app for the international business division (about 125 users). Approvers now act from Outlook or their phone.</p>
+                <ul class="bullets"><li>Approval chain (Region Head, President, CBO) skips empty levels and moves an approver's own request one level up.</li><li>Every status and budget change runs inside flows, not the app, so data never gets out of step.</li><li>Worked around conditional access blocking CLI tools, child-flow connection failures and SharePoint time-zone bugs.</li><li>Wrote the BRD, test cases, UAT script, user and admin manuals and the migration runbook.</li></ul>
+              </div>
+              <div>
+                <ul class="metrics"><li><b>~1 week → &lt;24h</b><span>to get a trip approved</span></li><li><b>~125</b><span>users</span></li></ul>
+                <ul class="chips"><li>Power Apps Canvas</li><li>SharePoint Online</li><li>Power Automate</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="card case full reveal">
+            <div class="visual t4"><ol class="flow"><li><b>Canvas + model-driven apps</b><span>dealer &amp; admin</span></li><li><b>Power Automate</b><span>audit · retries</span></li><li><b>Microsoft Graph API</b><span>throttling handled</span></li><li><b>Entra ID + Exchange</b><span>accounts · mailboxes · licences</span></li></ol><small>Routine tenant administration without opening the Azure Portal.</small></div>
+            <div class="case-body">
+              <div>
+                <p class="tag">Architect &amp; delivery lead · team of 3–5</p>
+                <h3>Dealer portal &amp; tenant administration</h3>
+                <p class="what">Automaker dealer network</p>
+                <p>Dealer management for 1,500+ dealers across India, designed for 3–4x growth.</p>
+                <ul class="bullets"><li>Manages accounts, mailboxes, licences, groups and Exchange settings through the Graph API, so IT no longer needs the Azure Portal for routine work.</li><li>Audit trails with correlation IDs, and retry handling for Graph API throttling.</li><li>Owned estimates, release planning and UAT.</li></ul>
+              </div>
+              <div>
+                <ul class="metrics"><li><b>1,500+</b><span>dealers</span></li><li><b>3–4x</b><span>growth designed for</span></li></ul>
+                <ul class="chips"><li>Power Apps</li><li>Power Automate</li><li>Microsoft Graph API</li><li>Dataverse</li><li>Entra ID</li><li>Exchange Online</li></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+        <h3 class="reveal more-title">More delivery</h3>
+        <div class="grid three">
+          <article class="card mini reveal">
+            <p class="tag">Lead developer · team of 3–5</p>
+            <h3>Deal management portal</h3>
+            <p class="what">Real estate group</p>
+            <p>Deal tracking for sales and pre-sales, thousands of deals a month. Excel bulk upload with row checks and de-duplication, multi-stage approvals with SLA escalation, and Power BI reporting end to end.</p>
+            <p class="metric-line">~10 hrs saved per deal</p>
+            <ul class="chips"><li>Canvas</li><li>Dataverse</li><li>Power BI</li></ul>
+          </article>
+          <article class="card mini reveal">
+            <p class="tag">Lead developer · team of 2–4</p>
+            <h3>Field sales automation</h3>
+            <p class="what">Airline</p>
+            <p>Field sales app for 120+ reps across India, with Graph API calendar automation and live Dataverse dashboards. The client kept adding enhancements after go-live.</p>
+            <p class="metric-line">20+ hrs saved a week</p>
+            <ul class="chips"><li>Canvas</li><li>Graph API</li><li>Dataverse</li></ul>
+          </article>
+          <article class="card mini reveal">
+            <p class="tag">Power Platform</p>
+            <h3>Utilization &amp; variable pay calculator</h3>
+            <p class="what">IT services company</p>
+            <p>Automated utilization and variable pay for the whole workforce, with pay rules configurable in Dataverse and multi-party approval.</p>
+            <p class="metric-line">~200 hrs saved a quarter</p>
+            <ul class="chips"><li>Canvas</li><li>Power Automate</li><li>Dataverse</li></ul>
+          </article>
+          <article class="card mini reveal">
+            <p class="tag">Power Platform</p>
+            <h3>Internal feedback system</h3>
+            <p class="what">Manufacturing company</p>
+            <p>Feedback app for 3,000+ manufacturing employees, with reminders, escalation and form validation.</p>
+            <p class="metric-line">70%+ more responses</p>
+            <ul class="chips"><li>Canvas</li><li>SharePoint</li><li>Power Automate</li></ul>
+          </article>
+          <article class="card mini reveal">
+            <p class="tag">Technical lead &amp; solution designer</p>
+            <h3>SharePoint app portfolio</h3>
+            <p class="what">Business process services company</p>
+            <p>Looked after a 12-app SharePoint estate and rebuilt the apps as responsive canvas apps. Set the app-building standards the team adopted.</p>
+            <p class="metric-line">12 apps rebuilt</p>
+            <ul class="chips"><li>Canvas</li><li>SharePoint</li><li>Power Automate</li></ul>
+          </article>
+          <article class="card mini reveal">
+            <p class="tag">Power Pages</p>
+            <h3>CSR portal</h3>
+            <p class="what">Global engineering services company</p>
+            <p>Public Power Pages site for the company's CSR work, replacing tracking spread across email and spreadsheets.</p>
+            <p class="metric-line">Public portal</p>
+            <ul class="chips"><li>Power Pages</li><li>Dataverse</li><li>Power Automate</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <p class="kicker reveal">02 · Support</p>
+        <h2 class="reveal">Support &amp; standards.</h2>
+        <div class="grid three">
+          <article class="card plain reveal">
+            <h3>Support leadership</h3>
+            <p>Lead the AMC team (10+ people) for 10+ client apps. Built the Zoho, Dynamics 365 Customer Service and Teams ticket platform, cutting resolution time from weeks to days.</p>
+          </article>
+          <article class="card plain reveal">
+            <h3>Handover &amp; pre-sales</h3>
+            <p>Train end users, write user guides and run handover sessions with client teams. Support pre-sales with solution approaches, estimates and client presentations.</p>
+          </article>
+          <article class="card plain reveal">
+            <h3>Standards &amp; mentoring</h3>
+            <p>Onboarded 20+ developers. Built shared Power Fx libraries, flow templates and a Dev/Test/Prod ALM setup.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="container narrow">
+        <p class="kicker reveal">03 · Experience</p>
+        <h2 class="reveal">Experience.</h2>
+        <ol class="timeline">
+          <li class="reveal">
+            <p class="when">Oct 2026 – Present</p>
+            <h3>Senior Technical Consultant</h3>
+            <p class="org">Sysfore Technologies · Bengaluru</p>
+            <p>I work with clients from the first conversation to well after go-live: sitting with their teams, designing the fix, building it and staying on to support it, usually across several projects at once. I lead the support team for 10+ client apps and review every solution before it reaches production. I'm also testing Microsoft's Copilot app builders on real client rebuilds and building Resilio, a CAPA product, with an external quality consultant.</p>
+          </li>
+          <li class="reveal">
+            <p class="when">Aug 2024 – Oct 2026</p>
+            <h3>Technical Consultant, Microsoft Power Platform</h3>
+            <p class="org">Sysfore Technologies</p>
+            <p>Lead developer and solution designer on the quality portal for a global engineering services company (reads go through flows and large lists are paged by ID to get past SharePoint and Power Apps limits at this scale). Built identity automation for a global IT services company on the Graph API, with retries and escalation so failures don't get lost. Set up an onboarding path that 20+ new developers have gone through, and ALM across Dev, Test and Prod with pipelines and managed solutions, plus DLP and security roles in production.</p>
+          </li>
+          <li class="reveal">
+            <p class="when">Sep 2023 – Aug 2024</p>
+            <h3>Associate Technical Consultant</h3>
+            <p class="org">Sysfore Technologies</p>
+            <p>Led teams of 2–7 on Sales, Finance and Operations projects as lead developer and solution designer. Built custom connectors and set up Azure API Management as the central gateway for client integrations. Added shared Power Fx component libraries, flow templates and connector patterns to the internal standards, and supported pre-sales with solution approaches and estimates.</p>
+          </li>
+          <li class="reveal">
+            <p class="when">Sep 2022 – Aug 2023</p>
+            <h3>Associate Software Engineer</h3>
+            <p class="org">Sysfore Technologies</p>
+            <p>Started on the Power Platform.</p>
+          </li>
+          <li class="reveal">
+            <p class="when">Oct 2021 – Dec 2021</p>
+            <h3>Associate (internship)</h3>
+            <p class="org">The Entrepreneurship Network (TEN Labs)</p>
+          </li>
+        </ol>
+        <p class="note reveal">Education: East Point College of Engineering &amp; Technology, Bangalore.</p>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="container">
+        <p class="kicker reveal">04 · AI</p>
+        <h2 class="reveal">AI-assisted delivery.</h2>
+        <p class="big reveal">I use AI to move faster, and I keep the judgment, the spec and the sign-off.</p>
+        <ol class="steps">
+          <li class="step reveal"><h3>Spec first</h3><p>Requirement workshops and a clear BRD or spec before anything is generated.</p></li>
+          <li class="step reveal"><h3>Generate</h3><p>AI drafts code, formulas and boilerplate against that spec.</p></li>
+          <li class="step reveal"><h3>Verify</h3><p>Every output is reviewed and tested by me before it goes near a client tenant.</p></li>
+          <li class="step reveal"><h3>Ship &amp; support</h3><p>Standard ALM through Dev, Test and Prod, then ongoing support.</p></li>
+        </ol>
+        <ul class="ai-proof reveal">
+          <li><strong>C# plugin (EV components maker).</strong> Written by AI to my spec, then verified by me.</li>
+          <li><strong>Resilio CAPA.</strong> Python tooling to generate parts of the build from a 121-feature BRD.</li>
+          <li><strong>Copilot app builder.</strong> Feasibility rebuilds of existing client apps to test what it can and can't do.</li>
+          <li><strong>RAG project.</strong> LangChain, Chroma and Claude, as a personal learning project.</li>
+        </ul>
+        <h3 class="reveal" style="margin-top:56px;font-size:28px">The stack I work with</h3>
+        <ul class="stack reveal">
+          <li><i style="--icon:url(icons/powerapps.svg);--c:#742774"></i>Power Apps</li>
+          <li><i style="--icon:url(icons/powerautomate.svg);--c:#0066FF"></i>Power Automate</li>
+          <li><i style="--icon:url(icons/powerbi.svg);--c:#E5A800"></i>Power BI</li>
+          <li><i style="--icon:url(icons/microsoftsharepoint.svg);--c:#0078D4"></i>SharePoint</li>
+          <li><i style="--icon:url(icons/microsoftteams.svg);--c:#6264A7"></i>Teams</li>
+          <li><i style="--icon:url(icons/dynamics365.svg);--c:#0B53CE"></i>Dynamics 365</li>
+          <li><i style="--icon:url(icons/zoho.svg);--c:#C8202B"></i>Zoho</li>
+          <li><i style="--icon:url(icons/azuredevops.svg);--c:#0078D7"></i>Azure DevOps</li>
+          <li><i style="--icon:url(icons/github.svg)"></i>GitHub</li>
+          <li><i style="--icon:url(icons/microsoftsqlserver.svg);--c:#CC2927"></i>SQL Server</li>
+          <li><i style="--icon:url(icons/csharp.svg);--c:#512BD4"></i>C#</li>
+          <li><i style="--icon:url(icons/python.svg);--c:#3776AB"></i>Python</li>
+          <li><i style="--icon:url(icons/anthropic.svg);--c:#D97757"></i>Claude</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt" id="experiments">
+      <div class="container">
+        <p class="kicker reveal">05 · Experiments</p>
+        <h2 class="reveal">Builds &amp; experiments.</h2>
+        <p class="sub reveal">Newer and exploratory work, kept separate from client delivery.</p>
+        <div class="grid three">
+          <article class="card reveal">
+            <p class="tag">Internal product · in progress</p>
+            <h3>Resilio CAPA</h3>
+            <p>121-feature BRD, a 40-list data model, and 7 of 8 flows built and tested, with Python generation tooling.</p>
+          </article>
+          <article class="card reveal">
+            <p class="tag">Feasibility study</p>
+            <h3>Copilot app builder</h3>
+            <p>Rebuilds of existing client apps (a carmaker's daily machine-check app and an EV components maker's metal-price calculator) to test what Copilot can produce.</p>
+          </article>
+          <article class="card reveal">
+            <p class="tag">Personal project · not production</p>
+            <h3>RAG side project</h3>
+            <p>Retrieval-augmented generation with LangChain, Chroma and Claude.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="kicker reveal">06 · Skills</p>
+        <h2 class="reveal">Skills.</h2>
+        <div class="skill-groups">
+          <div class="reveal">
+            <h3>Power Platform</h3>
+            <ul class="pills"><li>Canvas apps</li><li>Power Automate</li><li>Dataverse</li><li>SharePoint</li><li class="soft">PCF</li><li class="soft">Power Pages</li><li class="soft">Power BI</li></ul>
+          </div>
+          <div class="reveal">
+            <h3>Integration</h3>
+            <ul class="pills"><li>Custom connectors</li><li>Graph API</li><li class="soft">C# plugins</li><li class="soft">SQL Server</li><li class="soft">Python</li></ul>
+          </div>
+          <div class="reveal">
+            <h3>ALM &amp; governance</h3>
+            <ul class="pills"><li>Azure DevOps</li><li>GitHub</li><li>DLP</li><li>Security roles</li></ul>
+          </div>
+          <div class="reveal">
+            <h3>Delivery</h3>
+            <ul class="pills"><li>Requirement workshops</li><li>BRDs &amp; specs</li><li>Mentoring</li><li>Team leadership</li></ul>
+          </div>
+        </div>
+        <p class="note reveal">Solid pills are core strengths; lighter pills are working level.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="certs">
+      <div class="container narrow">
+        <p class="kicker reveal">07 · Learning</p>
+        <h2 class="reveal">Learning &amp; certifications.</h2>
+        <div class="cert reveal">
+          <div>
+            <h3>AB-100</h3>
+            <p>Exam scheduled for 12 December 2026.</p>
+          </div>
+          <span class="badge">Scheduled</span>
+        </div>
+        <h3 class="reveal" style="margin:48px 0 8px;font-size:24px">Microsoft Learn badges</h3>
+        <ul class="ai-proof reveal">
+          <li>Integrate agents with enterprise systems in Microsoft Copilot Studio</li>
+          <li>Design ALM process for AI-powered business solutions</li>
+          <li>Introduction to natural language processing concepts</li>
+          <li>Power Automate's deep integration across multiple data sources</li>
+          <li>Use administration options for Dataverse</li>
+          <li>Manage tables in Dataverse</li>
+        </ul>
+        <h3 class="reveal" style="margin:48px 0 8px;font-size:24px">Writing</h3>
+        <p class="sub reveal" style="margin:0">I share hands-on notes on <a class="btn link" href="https://www.linkedin.com/in/aswin-m-s/">LinkedIn</a>, such as choosing between canvas, model-driven and code apps, trying Copilot Managed Runtime, and what the latest Power Apps updates and retirements mean for your environments.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container narrow center">
+        <p class="kicker reveal">08 · Contact</p>
+        <h2 class="reveal">Let's talk.</h2>
+        <p class="big reveal">I automate the workflows that quietly waste people's hours, and I make sure they don't look like an engineer who hates colour designed them.</p>
+        <div class="cta reveal">
+          <a href="mailto:aswinms273@gmail.com" class="btn primary">Email me</a>
+        </div>
+        <p class="social reveal">
+          <a href="https://www.linkedin.com/in/aswin-m-s/">LinkedIn</a>
+          <a href="https://github.com/Aswin-M-S">GitHub</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Aswin. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
