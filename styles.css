@@ -374,7 +374,7 @@ ol { list-style: none; }
   .card.case:hover .flow li:not(:last-child)::after { animation-duration: .45s; }
 }
 @media (prefers-reduced-motion: reduce) { .flow li:not(:last-child)::after { animation: none; } }
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   .flow { flex-direction: column; gap: 22px; }
   .flow li { display: grid; grid-template-columns: 68px 1fr; column-gap: 16px; text-align: left; align-items: center; padding: 0; }
   .flow .ico { grid-row: 1 / span 2; margin: 0; }
@@ -426,3 +426,50 @@ ol { list-style: none; }
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) { --muted: #d0d0d5; --line: rgba(255, 255, 255, .45); }
 }
+
+/* ===== Responsive refinements ===== */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+img, svg { max-width: 100%; }
+
+/* Notches / safe areas */
+.nav-inner { padding-left: max(22px, env(safe-area-inset-left)); padding-right: max(22px, env(safe-area-inset-right)); }
+.section, .hero, .footer { padding-left: max(22px, env(safe-area-inset-left)); padding-right: max(22px, env(safe-area-inset-right)); }
+
+/* AI steps: 4 across, then 2x2, then stacked (no orphan card) */
+.steps { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+/* Tablet: flow stays horizontal, tighter badges */
+@media (max-width: 900px) and (min-width: 641px) {
+  .flow .ico { width: 56px; height: 56px; border-radius: 18px; }
+  .flow li:not(:last-child)::after { top: 27px; left: calc(50% + 34px); width: calc(100% - 68px); }
+  .flow li:not(:last-child) .ico::after { right: -38px; }
+  .flow b { font-size: 14px; }
+  .section { padding-top: 96px; padding-bottom: 96px; }
+}
+@media (max-width: 800px) { .grid.three, .grid.two { grid-template-columns: 1fr; } }
+@media (min-width: 801px) and (max-width: 1023px) { .grid.three { grid-template-columns: repeat(2, 1fr); } }
+
+/* Small phones */
+@media (max-width: 380px) {
+  h1 { font-size: 34px; }
+  .eyebrow { font-size: 12px; }
+  .section { padding-top: 64px; padding-bottom: 64px; }
+  .card.case.full { padding: 12px 12px 24px; }
+  .case-body { padding: 0 6px; }
+  .stats { gap: 28px; }
+  .hero-stats b { font-size: 26px; }
+}
+
+/* Landscape phones: don't force a full-height hero */
+@media (max-height: 520px) and (orientation: landscape) { .hero { min-height: auto; padding-top: 96px; } }
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .container { max-width: 1180px; }
+  .container.narrow { max-width: 860px; }
+  .hero-stats { max-width: 960px; }
+}
+@media (max-width: 800px) and (min-width: 481px) { .case-body .metrics { flex-direction: row; } .case-body .metrics li { flex: 1 1 140px; } }
