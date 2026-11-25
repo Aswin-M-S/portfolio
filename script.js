@@ -126,3 +126,58 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
     b.addEventListener('pointerleave', () => { b.style.transform = ''; });
   });
 }
+
+// External links: same tab by default; visitors can opt in to a new tab (remembered)
+(function () {
+  const toggle = document.getElementById('newTabToggle');
+  if (!toggle) return;
+  const ext = [...document.querySelectorAll('a[href^="http"]')].filter((a) => a.hostname !== location.hostname);
+  ext.forEach((a) => {
+    a.classList.add('ext');
+    a.rel = 'noopener noreferrer';
+    const hint = document.createElement('span');
+    hint.className = 'sr-new';
+    hint.textContent = ' (opens in a new tab)';
+    a.appendChild(hint);
+  });
+  const apply = (on) => ext.forEach((a) => (on ? a.setAttribute('target', '_blank') : a.removeAttribute('target')));
+  let saved = false;
+  try { saved = localStorage.getItem('newTab') === '1'; } catch (e) {}
+  toggle.checked = saved;
+  apply(saved);
+  toggle.addEventListener('change', () => {
+    apply(toggle.checked);
+    try { localStorage.setItem('newTab', toggle.checked ? '1' : '0'); } catch (e) {}
+  });
+})();
+
+// Accessibility options (saved in localStorage as "a11y")
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById('a11yBtn');
+  const panel = document.getElementById('a11yPanel');
+  if (!btn || !panel) return;
+  const KEYS = ['contrast', 'motion', 'font', 'links', 'spacing'];
+  let st = { ts: 0 };
+  try { st = Object.assign({ ts: 0 }, JSON.parse(localStorage.getItem('a11y') || '{}')); } catch (e) {}
+  if (!('motion' in st) && window.matchMedia('(prefers-reduced-motion: reduce)').matches) st.motion = true;
+  const save = () => { try { localStorage.setItem('a11y', JSON.stringify(st)); } catch (e) {} };
+  const render = () => {
+    root.setAttribute('data-ts', st.ts || 0);
+    KEYS.forEach((k) => root.classList.toggle('a11y-' + k, !!st[k]));
+    panel.querySelectorAll('input[data-opt]').forEach((i) => { i.checked = !!st[i.dataset.opt]; });
+    panel.querySelectorAll('.a11y-seg button').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.ts === +(st.ts || 0))));
+  };
+  const open = (on) => {
+    panel.hidden = !on;
+    btn.setAttribute('aria-expanded', String(on));
+    if (on) { const f = panel.querySelector('button, input'); if (f) f.focus(); }
+  };
+  btn.addEventListener('click', () => open(panel.hidden));
+  document.getElementById('a11yClose').addEventListener('click', () => { open(false); btn.focus(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
+  panel.querySelectorAll('input[data-opt]').forEach((i) => i.addEventListener('change', () => { st[i.dataset.opt] = i.checked; save(); render(); }));
+  panel.querySelectorAll('.a11y-seg button').forEach((b) => b.addEventListener('click', () => { st.ts = +b.dataset.ts; save(); render(); }));
+  document.getElementById('a11yReset').addEventListener('click', () => { st = { ts: 0 }; save(); render(); });
+  render();
+})();

@@ -38,10 +38,10 @@
   </script>
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="light dark">
-  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.setAttribute("data-theme",t);var a=JSON.parse(localStorage.getItem("a11y")||"{}");if(a.ts)d.setAttribute("data-ts",a.ts);["contrast","motion","font","links","spacing"].forEach(function(k){if(a[k])d.classList.add("a11y-"+k)})}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -415,8 +415,37 @@
 
   <footer class="footer">
     <p><a class="btn link" href="#top">Back to top &uarr;</a></p>
+    <label class="newtab-toggle">
+      <input type="checkbox" id="newTabToggle">
+      <span class="switch" aria-hidden="true"></span>
+      <span>Open external links in a new tab</span>
+    </label>
     <p>&copy; <span id="year"></span> Aswin. All rights reserved.</p>
   </footer>
+
+  <button class="a11y-btn" id="a11yBtn" type="button" aria-expanded="false" aria-controls="a11yPanel" aria-label="Accessibility options">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0-3.5 6M12 15l3.5 6"/></svg>
+  </button>
+  <section class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options" hidden>
+    <div class="a11y-head">
+      <h2>Accessibility</h2>
+      <button type="button" class="a11y-close" id="a11yClose" aria-label="Close accessibility options">&times;</button>
+    </div>
+    <div class="a11y-row">
+      <span id="tsLabel">Text size</span>
+      <div class="a11y-seg" role="group" aria-labelledby="tsLabel">
+        <button type="button" data-ts="0" aria-pressed="true">A</button>
+        <button type="button" data-ts="1" aria-pressed="false">A+</button>
+        <button type="button" data-ts="2" aria-pressed="false">A++</button>
+      </div>
+    </div>
+    <label class="a11y-opt"><input type="checkbox" data-opt="contrast"><span class="switch" aria-hidden="true"></span><span>High contrast</span></label>
+    <label class="a11y-opt"><input type="checkbox" data-opt="motion"><span class="switch" aria-hidden="true"></span><span>Reduce motion</span></label>
+    <label class="a11y-opt"><input type="checkbox" data-opt="font"><span class="switch" aria-hidden="true"></span><span>Readable font</span></label>
+    <label class="a11y-opt"><input type="checkbox" data-opt="spacing"><span class="switch" aria-hidden="true"></span><span>More text spacing</span></label>
+    <label class="a11y-opt"><input type="checkbox" data-opt="links"><span class="switch" aria-hidden="true"></span><span>Underline links</span></label>
+    <button type="button" class="a11y-reset" id="a11yReset">Reset all</button>
+  </section>
 
   <script data-goatcounter="https://aswinms.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   <script src="script.js"></script>

@@ -28,3 +28,11 @@ Dark mode follows the system by default. The toggle sets `data-theme="light|dark
 ## Analytics
 
 GoatCounter (cookie-free) counts visits via the script tag at the end of `index.html`; the dashboard is `https://aswinms.goatcounter.com`. No cookie banner is needed, so don't add other trackers without revisiting that.
+
+## External links
+
+`script.js` marks every off-site link (`a.ext`, `rel="noopener noreferrer"`). They open in the same tab unless a visitor switches on "Open external links in a new tab" in the footer; that choice is saved in localStorage (`newTab`). Off-site links added later get this behavior automatically.
+
+## Accessibility options
+
+A floating button (bottom-left, `#a11yBtn`) opens a panel (`#a11yPanel`) with text size, high contrast, reduce motion, readable font (Atkinson Hyperlegible), more text spacing and underline links. State is saved in localStorage (`a11y`) and applied as classes/`data-ts` on `<html>`; an inline script in `<head>` applies it before paint. Reduce motion defaults on when the OS asks for it. New components should use the CSS variables so high contrast keeps working. Text size uses CSS `zoom` on `body`.
