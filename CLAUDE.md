@@ -20,7 +20,3 @@ Open `index.html` in a browser, or serve the folder (e.g. `python -m http.server
 ## Theming
 
 Dark mode follows the system by default. The toggle sets `data-theme="light|dark"` on `<html>` and saves it in localStorage; an inline script in `<head>` applies it before paint to avoid a flash. Dark-mode variables are defined twice in `styles.css` (the media query and `[data-theme="dark"]`), so change both.
-
-## Resume download
-
-`Aswin_M_S_Resume.pdf` is a public copy of the owner's resume with the phone number removed and client names replaced by generic descriptors (matching the site). It is generated from the owner's private resume source (the `out/resume.html` file in their separate Resumes folder), so never publish that original here. If the resume is updated, regenerate this file with the same anonymization.

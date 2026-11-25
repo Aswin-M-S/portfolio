@@ -472,10 +472,3 @@ img, svg { max-width: 100%; }
   .hero-stats { max-width: 960px; }
 }
 @media (max-width: 800px) and (min-width: 481px) { .case-body .metrics { flex-direction: row; } .case-body .metrics li { flex: 1 1 140px; } }
-
-/* Secondary (outline) button */
-.btn.ghost { min-height: 44px; display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 980px;
-  border: 1px solid var(--line); color: var(--text); background: var(--nav);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
-@media (hover: hover) and (pointer: fine) { .btn.ghost { transition: border-color .2s, color .2s, transform .2s; } .btn.ghost:hover { transform: translateY(-2px); } }
