@@ -36,3 +36,7 @@ GoatCounter (cookie-free) counts visits via the script tag at the end of `index.
 ## Accessibility options
 
 An icon button in the header (`#a11yBtnTop`) opens a panel (`#a11yPanel`) under the header with text size, high contrast, reduce motion, readable font (Atkinson Hyperlegible), more text spacing and underline links. State is saved in localStorage (`a11y`) and applied as classes/`data-ts` on `<html>`; an inline script in `<head>` applies it before paint. Reduce motion defaults on when the OS asks for it. New components should use the CSS variables so high contrast keeps working. Text size uses CSS `zoom` on `body`.
+
+## Accessibility audit notes
+
+Audited with axe-core in dark, light and high-contrast modes: 0 violations. Colours were chosen to keep contrast: `--btn` (white text on buttons), `--accent` (link text), `--ga/--gb/--gc` (headline gradient) and `--muted-hero` (text over the hero glow) differ between light and dark. Bright gradients behind white text (`.t1`-`.t4` banners) must stay dark enough for white 12-15px text. Hero overlays make automated contrast checks inconclusive, so re-check those by hand if the hero changes. Not tested: screen readers, 200% zoom, real keyboard walk-through.
