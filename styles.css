@@ -286,13 +286,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .visual::before { content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(120% 90% at 0% 0%, rgba(255, 255, 255, .35), transparent 55%); }
 .visual small { display: block; position: relative; text-align: center; color: #fff; opacity: .9; font-size: 13px; margin-top: 22px; }
-.flow { position: relative; display: flex; align-items: stretch; gap: 30px; }
-.flow li { position: relative; flex: 1; text-align: center; color: #fff; padding: 16px 10px;
-  background: rgba(255, 255, 255, .16); border: 1px solid rgba(255, 255, 255, .35); border-radius: 16px;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-.flow li b { display: block; font-size: 15px; line-height: 1.25; }
-.flow li span { display: block; font-size: 12px; opacity: .88; margin-top: 4px; }
-.flow li:not(:last-child)::after { content: "\2192"; position: absolute; right: -26px; top: 50%; transform: translateY(-50%); color: #fff; font-size: 20px; }
 .case-body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; padding: 0 12px; }
 .case-body .metrics { flex-direction: column; margin-top: 8px; }
 .bullets { margin: 12px 0 0 18px; list-style: disc; color: var(--muted); font-size: 16px; }
@@ -306,8 +299,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .metric-line { color: var(--accent) !important; font-weight: 600; margin-top: 4px; }
 @media (max-width: 800px) {
   .case-body { grid-template-columns: 1fr; gap: 20px; }
-  .flow { flex-direction: column; gap: 30px; }
-  .flow li:not(:last-child)::after { content: "\2193"; right: auto; left: 50%; top: auto; bottom: -28px; transform: translateX(-50%); }
   .visual { padding: 28px 18px 22px; }
 }
 
@@ -325,12 +316,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .card.plain:hover { box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .2); }
 
   /* Case flow: nodes light up in sequence */
-  .flow li { transition: transform .3s ease, background .3s ease, box-shadow .3s ease; }
-  .card.case:hover .flow li { background: rgba(255, 255, 255, .24); }
-  .flow li:hover { transform: translateY(-4px) scale(1.04); background: rgba(255, 255, 255, .34) !important; box-shadow: 0 12px 24px -8px rgba(0, 0, 0, .35); }
-  .flow li:not(:last-child)::after { transition: transform .3s ease; }
-  .card.case:hover .flow li:not(:last-child)::after { transform: translate(5px, -50%); }
-
   /* Metrics, chips, pills, stack icons */
   .metrics li { transition: transform .25s ease, border-color .25s ease, background .25s ease; }
   .metrics li:hover { transform: translateY(-3px); border-color: var(--accent); }
@@ -363,3 +348,40 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 ol { list-style: none; }
 .case-body { align-items: start; }
 .case-body .metrics li { flex: none; }
+
+/* ===== Pictorial flows ===== */
+.visual { padding: 44px 24px 26px; }
+.flow { display: flex; align-items: flex-start; gap: 0; position: relative; }
+.flow li { position: relative; flex: 1; text-align: center; color: #fff; padding: 0 6px; min-width: 0; }
+.flow .ico { position: relative; z-index: 1; display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 14px;
+  border-radius: 22px; background: rgba(255, 255, 255, .2); border: 1px solid rgba(255, 255, 255, .5);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .5);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1), background .3s; }
+.flow .ico svg { width: 30px; height: 30px; fill: none; stroke: #fff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.flow .ico i.b { width: 30px; height: 30px; background: #fff; -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+.flow b { display: block; font-size: 15px; line-height: 1.25; }
+.flow .sub { display: block; font-size: 12px; opacity: .92; margin: 4px 0 0; line-height: 1.35; color: #fff; }
+/* animated connector between icon badges */
+.flow li:not(:last-child)::after { content: ""; position: absolute; top: 33px; left: calc(50% + 40px); width: calc(100% - 80px); height: 2px; border-radius: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .95) 0 6px, transparent 6px 14px); background-size: 14px 2px;
+  animation: march 1s linear infinite; }
+.flow li:not(:last-child) .ico::after { content: ""; position: absolute; right: -46px; top: 50%; width: 8px; height: 8px; margin-top: -4px;
+  border-top: 2px solid #fff; border-right: 2px solid #fff; transform: rotate(45deg); }
+@keyframes march { to { background-position: 14px 0; } }
+@media (hover: hover) and (pointer: fine) {
+  .flow li:hover .ico { transform: translateY(-5px) scale(1.1); background: rgba(255, 255, 255, .32); }
+  .card.case:hover .flow li:not(:last-child)::after { animation-duration: .45s; }
+}
+@media (prefers-reduced-motion: reduce) { .flow li:not(:last-child)::after { animation: none; } }
+@media (max-width: 800px) {
+  .flow { flex-direction: column; gap: 22px; }
+  .flow li { display: grid; grid-template-columns: 68px 1fr; column-gap: 16px; text-align: left; align-items: center; padding: 0; }
+  .flow .ico { grid-row: 1 / span 2; margin: 0; }
+  .flow b { align-self: end; }
+  .flow .sub { align-self: start; }
+  .flow li:not(:last-child)::after { top: 68px; left: 33px; width: 2px; height: 22px;
+    background: repeating-linear-gradient(180deg, rgba(255, 255, 255, .95) 0 5px, transparent 5px 10px); background-size: 2px 10px; animation: marchv 1s linear infinite; }
+  .flow li:not(:last-child) .ico::after { display: none; }
+  @keyframes marchv { to { background-position: 0 10px; } }
+}

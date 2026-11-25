@@ -13,6 +13,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+      <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M2 21c0-4 3.6-7 8-7s8 3 8 7M19 7v6M16 10h6"/></symbol>
+      <symbol id="i-user-check" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M2 21c0-4 3.6-7 8-7s8 3 8 7M16 11l2 2 4-4"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M13 16V8M18 16v-8"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 7V6a2 2 0 0 1 2-2h12M16 14h2"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 11a3.5 3.5 0 0 1-.5 7z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6zM9 12l2 2 4-4"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></symbol>
+    </defs>
+  </svg>
   <div class="progress" id="progress"></div>
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -61,7 +76,7 @@
         <p class="sub reveal">Four flagship builds, from problem to outcome.</p>
         <div class="stack-cases">
           <article class="card case full reveal">
-            <div class="visual t1"><ol class="flow"><li><b>Canvas app</b><span>21 screens · 17 components</span></li><li><b>Power Automate</b><span>69 flows</span></li><li><b>SharePoint REST</b><span>ID-range reads</span></li><li><b>SharePoint</b><span>~59 lists &amp; libraries</span></li></ol><small>Reads are routed through flows to get past delegation limits at this scale.</small></div>
+            <div class="visual t1"><ol class="flow"><li><span class="ico"><i class="b" style="--icon:url(icons/powerapps.svg)"></i></span><b>Canvas app</b><span class="sub">21 screens · 17 components</span></li><li><span class="ico"><i class="b" style="--icon:url(icons/powerautomate.svg)"></i></span><b>Power Automate</b><span class="sub">69 flows</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-code"/></svg></span><b>SharePoint REST</b><span class="sub">ID-range reads</span></li><li><span class="ico"><i class="b" style="--icon:url(icons/microsoftsharepoint.svg)"></i></span><b>SharePoint</b><span class="sub">~59 lists &amp; libraries</span></li></ol><small>Reads are routed through flows to get past delegation limits at this scale.</small></div>
             <div class="case-body">
               <div>
                 <p class="tag">Architect &amp; delivery lead · team of 3–5</p>
@@ -77,7 +92,7 @@
             </div>
           </article>
           <article class="card case full reveal">
-            <div class="visual t2"><ol class="flow"><li><b>New-joiner request</b><span>model-driven app</span></li><li><b>Dataverse</b><span>request + status</span></li><li><b>Flows + Graph API</b><span>accounts · licences · groups</span></li><li><b>Retry / escalate</b><span>correlation IDs</span></li><li><b>SLA dashboards</b><span>throughput · errors</span></li></ol><small>Every step is traced with a correlation ID, so a failure is never silent.</small></div>
+            <div class="visual t2"><ol class="flow"><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-user-plus"/></svg></span><b>New-joiner request</b><span class="sub">model-driven app</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-database"/></svg></span><b>Dataverse</b><span class="sub">request + status</span></li><li><span class="ico"><i class="b" style="--icon:url(icons/powerautomate.svg)"></i></span><b>Flows + Graph API</b><span class="sub">accounts · licences · groups</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><b>Retry / escalate</b><span class="sub">correlation IDs</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg></span><b>SLA dashboards</b><span class="sub">throughput · errors</span></li></ol><small>Every step is traced with a correlation ID, so a failure is never silent.</small></div>
             <div class="case-body">
               <div>
                 <p class="tag">Architect &amp; lead developer · team of 3–5</p>
@@ -93,7 +108,7 @@
             </div>
           </article>
           <article class="card case full reveal">
-            <div class="visual t3"><ol class="flow"><li><b>Submit</b><span>budget blocked</span></li><li><b>Region Head</b><span>approve in Outlook</span></li><li><b>President</b><span>phone notification</span></li><li><b>CBO</b><span>final approval</span></li><li><b>After the trip</b><span>budget settled</span></li></ol><small>Empty levels are skipped; an approver's own request moves up one level.</small></div>
+            <div class="visual t3"><ol class="flow"><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-send"/></svg></span><b>Submit</b><span class="sub">budget blocked</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-user"/></svg></span><b>Region Head</b><span class="sub">approve in Outlook</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-user"/></svg></span><b>President</b><span class="sub">phone notification</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-user-check"/></svg></span><b>CBO</b><span class="sub">final approval</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-wallet"/></svg></span><b>After the trip</b><span class="sub">budget settled</span></li></ol><small>Empty levels are skipped; an approver's own request moves up one level.</small></div>
             <div class="case-body">
               <div>
                 <p class="tag">Developer · team of 3 · Sep–Nov 2026</p>
@@ -109,7 +124,7 @@
             </div>
           </article>
           <article class="card case full reveal">
-            <div class="visual t4"><ol class="flow"><li><b>Canvas + model-driven apps</b><span>dealer &amp; admin</span></li><li><b>Power Automate</b><span>audit · retries</span></li><li><b>Microsoft Graph API</b><span>throttling handled</span></li><li><b>Entra ID + Exchange</b><span>accounts · mailboxes · licences</span></li></ol><small>Routine tenant administration without opening the Azure Portal.</small></div>
+            <div class="visual t4"><ol class="flow"><li><span class="ico"><i class="b" style="--icon:url(icons/powerapps.svg)"></i></span><b>Canvas + model-driven</b><span class="sub">dealer &amp; admin apps</span></li><li><span class="ico"><i class="b" style="--icon:url(icons/powerautomate.svg)"></i></span><b>Power Automate</b><span class="sub">audit · retries</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-cloud"/></svg></span><b>Microsoft Graph API</b><span class="sub">throttling handled</span></li><li><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><b>Entra ID + Exchange</b><span class="sub">accounts · mailboxes · licences</span></li></ol><small>Routine tenant administration without opening the Azure Portal.</small></div>
             <div class="case-body">
               <div>
                 <p class="tag">Architect &amp; delivery lead · team of 3–5</p>
