@@ -24,3 +24,7 @@ Dark mode follows the system by default. The toggle sets `data-theme="light|dark
 ## Search and sharing
 
 `index.html` carries Open Graph/Twitter tags (preview image `og-image.png`, 1200x630) and Person JSON-LD; `sitemap.xml` and `robots.txt` use the absolute URL `https://aswin-m-s.github.io/portfolio/`, so update them if the domain changes. Favicons: `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`.
+
+## Analytics
+
+GoatCounter (cookie-free) counts visits via the script tag at the end of `index.html`; the dashboard is `https://aswinms.goatcounter.com`. No cookie banner is needed, so don't add other trackers without revisiting that.
