@@ -23,7 +23,7 @@ body { transition: background-color .3s, color .3s; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 56px; }
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.47;
@@ -111,7 +111,7 @@ h2 { font-size: clamp(34px, 5.5vw, 56px); letter-spacing: -.02em; line-height: 1
 .footer { text-align: center; padding: 32px 22px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); }
 
 /* Scroll reveal */
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s ease, transform .9s ease; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -384,4 +384,45 @@ ol { list-style: none; }
     background: repeating-linear-gradient(180deg, rgba(255, 255, 255, .95) 0 5px, transparent 5px 10px); background-size: 2px 10px; animation: marchv 1s linear infinite; }
   .flow li:not(:last-child) .ico::after { display: none; }
   @keyframes marchv { to { background-position: 0 10px; } }
+}
+
+/* ===== UX-law refinements ===== */
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* Skip link (accessibility) */
+.skip { position: fixed; left: 12px; top: -60px; z-index: 30; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 10px; transition: top .2s; }
+.skip:focus { top: 12px; }
+
+/* Fitts's Law: comfortable (44px) touch targets */
+.theme-btn, .menu-btn { width: 44px; height: 44px; }
+.menu-btn span { left: 11px; right: 11px; }
+.menu-btn span:first-child { top: 17px; }
+.menu-btn span:last-child { top: 25px; }
+.menu-btn[aria-expanded="true"] span:first-child, .menu-btn[aria-expanded="true"] span:last-child { top: 21px; }
+.btn.primary { min-height: 44px; display: inline-flex; align-items: center; }
+.btn.link { padding: 10px 4px; }
+
+/* Von Restorff + Serial Position: Contact is the one distinct item, placed last */
+@media (min-width: 701px) {
+  .nav-links a.nav-cta { background: var(--accent); color: #fff; opacity: 1; padding: 7px 16px; border-radius: 980px; font-weight: 500; }
+  .nav-links a.nav-cta::after { display: none; }
+  .nav-links a.nav-cta:hover { filter: brightness(1.12); }
+}
+.nav-links a { font-size: 14px; }
+
+/* Peak-End: a clean, friendly ending */
+.footer { display: grid; gap: 4px; }
+
+/* Apple HIG: respect reduced transparency / increased contrast */
+@media (prefers-reduced-transparency: reduce) {
+  .nav, .eyebrow, .hero-stats li, .flow .ico, .nav-links { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav, .nav-links, .hero-stats li { background: var(--bg); }
+}
+@media (prefers-contrast: more) {
+  :root { --muted: #4a4a4f; --line: rgba(0, 0, 0, .4); }
+}
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --muted: #d0d0d5; --line: rgba(255, 255, 255, .45); }
 }
